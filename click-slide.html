@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<meta charset=utf-8 />
+<title>Demo by Roko C.B.</title>
+<style>
+*{margin:0;}
+
+
+
+#panel{
+  position:fixed;
+  background:#444;
+  color:#fff;
+  height:100%;
+  width:300px; 
+  right:-300px;
+  transition: right 0.4s ease-in-out;
+  -o-transition: right 0.4s ease-in-out;
+  -ms-transition: right 0.4s ease-in-out;
+  -moz-transition: right 0.4s ease-in-out;
+  -webkit-transition: right 0.4s ease-in-out;
+}
+
+#panel2{
+ 
+  position:fixed;
+  background:#68B5D1;
+  color:#fff;
+  height:100%;
+  width:300px; 
+  right:-300px;
+  z-index:-5;
+  transition: right 0.4s ease-in-out;
+  -o-transition: right 0.4s ease-in-out;
+  -ms-transition: right 0.4s ease-in-out;
+  -moz-transition: right 0.4s ease-in-out;
+  -webkit-transition: right 0.4s ease-in-out;
+  
+}
+#panel h2, #panel p{
+  padding:25px;
+}
+#panelCaller{
+  position:absolute;
+  top:50px;
+  right:300px;
+  padding:30px 10px;
+  background:#444; 
+}
+
+</style>
+</head> 
+<body>
+  
+  
+  <div id="panel"> 
+    <div >  c 
+     his is panel 1
+    </div>
+  <button id="b2" >click me</button>
+     
+    <h2>Panel</h2>
+    <p>C on tent</p>
+  </div> 
+  
+  <button id="b1"> click me</button>
+   
+  <div id="panel2">
+    <div > 
+      this i a pa nnel 2
+    </div> 
+    </div>
+  
+<script >
+$(document).ready(function(){
+
+  var clicked=false;
+$("#b1").on('click', function(){
+    if(clicked)
+     {
+        clicked=false;
+        $('#panel').css("right", "-300px");
+       $('#panel2').css("right", "-300px");
+    }    
+       else
+       {
+        clicked=true;
+             $('#panel').css("right", "0px");
+           
+ var clicked2=false;
+$("#b2").on('click', function(){
+    if(clicked2)
+    {
+        clicked2=false;
+        $('#panel2').css("right", "-300px");
+    }
+    else
+    {
+        clicked2=true;
+       $('#panel2').css("right", "300px");
+   
+    }
+  });
+    }
+  });
+
+    });
+</script>
+</body>
+</html>
